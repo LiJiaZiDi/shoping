@@ -2,6 +2,7 @@ package com.shop.wg.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -13,7 +14,7 @@ import com.shop.service.entity.UserEntity;
 @RequestMapping("test")
 public class TestController {
 	
-	@RequestMapping(value = "/test1")
+	@RequestMapping(value = "/test1",method=RequestMethod.GET)
 	public @ResponseBody UserEntity test1(UserEntity userEntity) {
 		System.out.println(JSON.toJSONString(userEntity));
 		return userEntity;
